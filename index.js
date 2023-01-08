@@ -48,7 +48,6 @@ $(document).ready(() => {
     let right = 0,
         wrong = 0;
 
-
     const getanswer = () => {
         let ans;
         answers.forEach((currentAnsEle) => {
@@ -77,6 +76,7 @@ $(document).ready(() => {
 
     // load all question and option
     const loadQuestion = () => {
+        isChecked();
         if (questionCount === total) {
             return EndQuiz()
         }
@@ -101,12 +101,24 @@ $(document).ready(() => {
 
     // end quiz 
     const EndQuiz = () => {
-        $(".quiz_cont").addClass('d-none')
+        $(".quiz_cont").addClass('d-none');
+        // $(".quiz_cont").addClass('d-none');
         let result_div = $(".showScore");
+        result_div.removeClass('d-none')
+
         result_div.html(`
-        <h3>Thanks for playing my quize</h3>
-        <h5 class="text-center">Your Score is : ${right}/${total}</h5>
-        <button class="button_class" onclick="location.reload()">Play Again</button>
+        <div>
+            <h3 class="text-center"><i class="fa-solid fa-square-poll-vertical score_icon mx-2"></i>Your Score</h3>
+        </div>
+        <div class="d-flex align-items-center justify-content-center flex-column">
+            <div class="user_wrap d-flex align-items-center justify-content-center flex-column">
+                <i class="fa-regular fa-user user mt-3 text-center"></i>
+                <p class="score my-3">You Scored: ${right}/${total}</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-center py-3">
+                <button class="Restart_btn" onclick="location.reload()"><i class="fa-brands fa-google-play mx-2"></i>Play Again</button>
+            </div>
+        </div>
         `);
     }
 
@@ -121,5 +133,6 @@ $(document).ready(() => {
             count++
         }, 1000);
     }
+
 
 })
