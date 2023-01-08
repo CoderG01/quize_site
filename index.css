@@ -32,7 +32,9 @@ body {
     background-color: #D5CEA3 !important;
     position: absolute;
 }
-
+.footer {
+    position: fixed !important;
+}
 .navbar-brand {
     color: #3C2A21 !important;
     font-size: 30px;
