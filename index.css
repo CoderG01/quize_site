@@ -16,9 +16,6 @@ body {
 }
 
 .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: auto;
 }
@@ -188,18 +185,26 @@ ul li label {
 
 @media (max-width:768px) {
     .card {
-        margin-top: 100px;
         padding: 2rem 1rem;
     }
     .button_class {
-        width: 124px;
+        height: 34px;
+        width: 111px;
+        font-size: 15px;
     }
     #question {
         text-align: left;
+        font-size: 17px;
         padding: 18px 15px;
+    }
+    .card ul li {
+        margin: 9px 0;
     }
     .card ul {
         width: 100%;
+    }
+    ul li label {
+        font-size: 15px;
     }
     .navbar-brand {
         font-size: 24px;
