@@ -76,7 +76,6 @@ $(document).ready(() => {
 
     // load all question and option
     const loadQuestion = () => {
-        isChecked();
         if (questionCount === total) {
             return EndQuiz()
         }
